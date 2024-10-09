@@ -1,0 +1,73 @@
+/* General Styles */
+body {
+    background: #006400;
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Container Positions */
+.index-page
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transition: transform 1s ease;
+}
+
+
+
+#game-page:checked ~ .index-page {
+    transform: translateY(-100vh);
+}
+
+
+
+/* Index Page Styles */
+.index-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+
+.index-page h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+.index-page p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
+
+.play-button {
+    cursor: pointer;
+}
+
+.play-button span {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(to bottom, #FFD700, #FFA500);
+    color: black;
+    border-radius: 5px;
+    font-size: 1.5em;
+    transition: background 0.3s, transform 0.1s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.play-button span:hover {
+    background: linear-gradient(to bottom, #FFA500, #FF8C00);
+}
+
+.play-button span:active {
+    transform: scale(0.95);
+}
+
+

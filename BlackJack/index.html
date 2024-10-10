@@ -8,6 +8,9 @@
 </head>
 <body>
 
+  <input type="radio" name="page" id="index-page" style="display: none;" checked />
+  <input type="radio" name="page" id="game-page" style="display: none;" />
+  <input type="radio" name="page" id="win-page" style="display: none;" />
 
   <!-- Index Page Content -->
   <div class="index-page">
@@ -18,6 +21,41 @@
         <span>Play Game</span>
       </label>
   </div>
+
+  <!-- Game Page Content -->
+  <div class="game-container">
+    <h1>Blackjack</h1>
+
+    <!-- Coin Balance Display -->
+    <div class="coin-balance">
+      <p>Your Coins:</p>
+      <div class="chip-container">
+        <div class="chip red-chip">100</div>
+        <div class="chip red-chip">100</div>
+        <div class="chip red-chip">100</div>
+        <div class="chip red-chip">100</div>
+        <div class="chip red-chip">100</div>
+      </div>
+    </div>
+
+    <!-- Betting Options -->
+    <div class="betting-options">
+      <p>Place Your Bet:</p>
+      <div class="bet-buttons">
+        <label for="bet-50">
+          <div class="chip blue-chip">50</div>
+        </label>
+        <label for="bet-100">
+          <div class="chip green-chip">100</div>
+        </label>
+        <label for="bet-200">
+          <div class="chip black-chip">200</div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+
 
   
 </body>

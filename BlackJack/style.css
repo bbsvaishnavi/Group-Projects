@@ -9,7 +9,7 @@ body {
 }
 
 /* Container Positions */
-.index-page
+.index-page,.game-container
 {
     position: fixed;
     top: 0;
@@ -19,13 +19,22 @@ body {
     transition: transform 1s ease;
 }
 
-
+/* Game and win pages hidden initially */
+.game-container{
+    transform: translateY(100vh);
+}
 
 #game-page:checked ~ .index-page {
     transform: translateY(-100vh);
 }
 
+#game-page:checked ~ .game-container {
+    transform: translateY(0);
+}
 
+#win-page:checked ~ .game-container {
+    transform: translateY(-100vh);
+}
 
 /* Index Page Styles */
 .index-page {
@@ -68,6 +77,79 @@ body {
 
 .play-button span:active {
     transform: scale(0.95);
+}
+
+/* Game Container Styles */
+.game-container {
+    text-align: center;
+    z-index: 2;
+}
+
+/* Coin Balance Styles */
+.coin-balance {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.chip {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    margin: 5px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: red;
+    box-shadow: inset 0 0 0 4px white, 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Chip Colors */
+.red-chip { background: red; }
+.blue-chip { background: blue; }
+.green-chip { background: green; }
+.black-chip { background: black; color: gold; }
+
+/* Betting Options */
+.betting-options {
+    margin-bottom: 20px;
+}
+
+.betting-options p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.bet-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.bet-buttons label {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.bet-buttons .chip {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.bet-buttons .chip:hover {
+    transform: scale(1.1);
+    box-shadow: inset 0 0 0 4px white, 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.bet-buttons .chip:active {
+    transform: scale(1.05);
 }
 
 

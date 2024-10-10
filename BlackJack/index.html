@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Blackjack Game</title>
@@ -11,6 +11,10 @@
   <input type="radio" name="page" id="index-page" style="display: none;" checked />
   <input type="radio" name="page" id="game-page" style="display: none;" />
   <input type="radio" name="page" id="win-page" style="display: none;" />
+
+  <!-- Hidden Checkbox Inputs for Game Controls -->
+  <input type="checkbox" id="hit-card-1" style="display: none;" />
+  <input type="checkbox" id="stand-button" style="display: none;" />
 
   <!-- Index Page Content -->
   <div class="index-page">
@@ -53,9 +57,73 @@
         </label>
       </div>
     </div>
+  
+  <!-- Table -->
+  <div class="table">
+    <!-- Dealer's hand (top side) -->
+    <div class="dealer">
+      <p class="dealer-name">Dealer</p>
+      <div class="hand">
+        <div class="card card-front"></div>
+        <div class="card card-front"></div>
+        <div class="card card-front"></div>
+      </div>
+    </div>
+
+    <!-- Player 1's hand (left side) -->
+    <div class="player player-1">
+      <p class="player-name">Player 1</p>
+      <div class="hand">
+        <div class="card card-front"></div>
+        <div class="card card-front"></div>
+        <!-- Extra card for Player 1 (hidden initially) -->
+        <div class="card card-front extra-card"></div>
+      </div>
+    </div>
+
+    <!-- Player 2's hand (bottom-left side) -->
+    <div class="player player-2">
+      <p class="player-name">Player 2</p>
+      <div class="hand">
+        <div class="card card-front"></div>
+        <div class="card card-front"></div>
+      </div>
+    </div>
+
+    <!-- Player 3's hand (right side) -->
+    <div class="player player-3">
+      <p class="player-name">Player 3</p>
+      <div class="hand">
+        <div class="card card-front"></div>
+        <div class="card card-front"></div>
+      </div>
+    </div>
+
+    <!-- Player 4's hand (bottom-right side) -->
+    <div class="player player-4">
+      <p class="player-name">Player 4</p>
+      <div class="hand">
+        <div class="card card-front"></div>
+        <div class="card card-front"></div>
+      </div>
+    </div>
   </div>
 
+   <!-- Controls -->
+   <div class="controls">
+    <!-- Hit Button (will reveal extra card) -->
+    <label for="hit-card-1">
+      <span>Hit</span>
+    </label>
+    <!-- Stand Button -->
+    <label for="stand-button">
+      <span>Stand</span>
+    </label>
+  </div>
 
+</div>
+
+</div>
 
   
 </body>

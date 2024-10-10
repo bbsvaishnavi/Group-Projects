@@ -152,4 +152,172 @@ body {
     transform: scale(1.05);
 }
 
+/* Table and Cards */
+.table {
+    background: radial-gradient(circle at center, #228B22, #006400);
+    padding: 20px;
+    border-radius: 10px;
+    border: 5px solid #FFD700;
+    position: relative;
+    margin: 0 auto;
+    max-width: 800px;
+    height: 400px;
+}
 
+/* Player Styles */
+.player, .dealer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Player and Dealer Hands */
+.hand {
+    display: flex;
+}
+
+/* Player and Dealer Name Floating Above the Cards */
+.player-name, .dealer-name {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Dealer (Top) */
+.dealer {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Player 1 (Left Side) */
+.player-1 {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+/* Player 2 (Bottom-Left Side) */
+.player-2 {
+    bottom: 10px;
+    left: 20%;
+}
+
+/* Player 3 (Right Side) */
+.player-3 {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+/* Player 4 (Bottom-Right Side) */
+.player-4 {
+    bottom: 10px;
+    right: 20%;
+}
+
+/* Cards Styles */
+.card {
+    width: 80px;
+    height: 120px;
+    margin: 0 10px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.card::before,
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+    background: url('card-back.png') no-repeat center/cover;
+}
+
+.card::after {
+    background: url('card-front.png') no-repeat center/cover;
+    transform: rotateY(180deg);
+}
+
+/* Extra Card */
+.extra-card {
+    display: none;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+/* Show and flip the extra card when the 'Hit' button is checked */
+#hit-card-1:checked ~ .game-container .player-1 .extra-card {
+    display: inline-block;
+    animation: dealCard 0.5s forwards;
+    transform: rotateY(180deg);
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: rotateY(180deg) scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Controls */
+.controls {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.controls label {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.controls span {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, #FFD700, #FFA500);
+    color: black;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.1s;
+}
+
+/* Back Button */
+.back-button {
+    cursor: pointer;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.back-button span {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(to bottom, #FFD700, #FFA500);
+    color: black;
+    border-radius: 5px;
+    font-size: 1.5em;
+    transition: background 0.3s, transform 0.1s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.back-button span:hover {
+    background: linear-gradient(to bottom, #FFA500, #FF8C00);
+}
+
+.back-button span:active {
+    transform: scale(0.95);
+}

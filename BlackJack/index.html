@@ -16,6 +16,13 @@
   <input type="checkbox" id="hit-card-1" style="display: none;" />
   <input type="checkbox" id="stand-button" style="display: none;" />
 
+  <!-- New hidden checkboxes to reset win and reset game state -->
+  <input type="checkbox" id="reset-win" style="display: none;" />
+  <input type="checkbox" id="reset-game" style="display: none;" />
+
+  <!-- Win Game Checkbox (for testing) -->
+  <input type="checkbox" id="win-test" style="display: none;" />
+
   <!-- Index Page Content -->
   <div class="index-page">
     <h1>Welcome to Blackjack</h1>
@@ -121,9 +128,62 @@
     </label>
   </div>
 
+  <!-- Simulate Win Checkbox -->
+  <div class="win-checkbox">
+    <label for="win-test">
+      <span>Check to Simulate Win</span>
+    </label>
+  </div>
 </div>
 
+<!-- Winning Page Content -->
+<div class="win-page">
+  <h1 class="win-message">Congratulations, You Won!</h1>
+  <div class="confetti-container">
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+  </div>
+  <!-- Back to Menu -->
+  <label for="reset-win" class="back-button" onclick="document.getElementById('reset-game').checked=true;">
+    <span>Back to Menu</span>
+  </label>
 </div>
+
+<!-- Trigger the win page when checkbox is checked -->
+<style>
+  #win-test:checked ~ .game-container {
+    transform: translateY(-100vh);
+  }
+
+  #win-test:checked ~ .win-page {
+    transform: translateY(0);
+  }
+
+  /* Reset the winning state and go back to index page */
+  #reset-win:checked ~ #win-test {
+    display: none; /* Simulate resetting the win-test checkbox */
+  }
+
+  #reset-win:checked ~ .index-page {
+    transform: translateY(0); /* Bring back the index page */
+  }
+
+  #reset-win:checked ~ .game-container {
+    transform: translateY(100vh); /* Move the game page out */
+  }
+
+  #reset-win:checked ~ .win-page {
+    transform: translateY(100vh); /* Hide the win page */
+  }
+</style>
 
   
 </body>
